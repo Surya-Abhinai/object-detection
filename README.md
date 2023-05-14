@@ -127,6 +127,8 @@ Suppose N is the threshold and we have two lists A and B.Then for each class det
 
 * Select the proposal with highest confidence score, remove it from A and add it to the final proposal list B. (Initially B is empty).
 * Now compare this proposal with all the proposals by calculating the IOU (Intersection over Union) of this proposal with every other proposal. If the IOU is greater than the threshold N, remove that proposal from A.
+<image src = "https://miro.medium.com/v2/resize:fit:640/format:webp/1*r0o3vX-x979Q84_lbJWS_g.jpeg">
+  
 * Again take the proposal with the highest confidence from the remaining proposals in A and remove it from A and add it to B.
 * Once again calculate the IOU of this proposal with all the proposals in A and eliminate the boxes which have high IOU than threshold.
 * This process is repeated until there are no more proposals left in A.
@@ -137,6 +139,8 @@ NMS intends to cure the problem of multiple detections of the same image. For ex
 
 ## Our implementation
 YOLO can only detect objects belonging to the classes present in the dataset used to train the network. We will be using the official weight file for our detector. These weights have been obtained by training the network on COCO dataset, and therefore we can detect 80 object categories.
+
+<image src = "https://miro.medium.com/v2/resize:fit:828/format:webp/1*HOE9YPC9U7USEx91EdNP-A.png">
 
 ### References:
 
