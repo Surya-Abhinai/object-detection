@@ -10,7 +10,7 @@
 * Tejas S
 * Shriya Sheri
 # Aim 
-The project aims to to build yolo architecture to detect objects 
+The project aims to build yolo architecture to detect objects 
 
 # Libraries used
 * Numpy
