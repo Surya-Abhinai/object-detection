@@ -25,11 +25,11 @@ Yolo is a state-of-the-art, object detection algorithm. It was developed by Jose
 
 For network input (416, 416),
 
-For 82nd layer the stride is 32 and the output size is 13x13 and it is responsible to detect large objects
+For 82nd layer the stride is 32 and the output size is 52x52 and it is responsible to detect large objects
 
 For 94th layer the stride is 16 and the output size is 26x26 and it is responsible to detect medium objects
 
-For 106th layer the stride is 8 and the output size is 52x52 and it is responsible to detect small objects
+For 106th layer the stride is 8 and the output size is 13x13 and it is responsible to detect small objects
 
 This is the reason why the network input must be divisible by 32, because if it is divisible by 32 then it is also divisible by 16 and 8 as well.
 
@@ -55,32 +55,6 @@ For, Scale 1: (116x90), (156x198), (373x326)
 Scale 2: (30x61), (62x45), (59x119)
 
 Scale 3: (10x13), (16x30), (33x23)
-
-So, for, Scale 1: we have, 13x13x3 = 507 bounding box
-
-Scale 2: we have, 26x26x3 = 2028 bounding box
-
-Scale 3: we have, 52x52x3 = 8112 bounding box
-
-# Making Predictions
-
-For each bounding box, We have<br>
-* 4 coordinates (tx,ty,tw,th)<br>
-* Probability of bounding box. ie,probability that an object is present inside the bounding box<br>
-* Class probabilities for each class (Here, 80 classes)<br>
-
-If there is some offset from the top left corner by cx,cy, then the predictions correspond to:
-
-* **bx = σ(tx) + cx**<br>
-
-* **by = σ(ty) + cy**<br>
-
-* **bw = pw x e^tw**<br>
-
-* **bh = ph x e^th**<br>
-
-Here bx, by, bw, bh are the x,y center co-ordinates, width and height of our prediction. tx, ty, tw, th are the network outputs. cx and cy are the top-left co-ordinates of the grid. pw and ph are anchors dimensions for the box.Before going further we will explain about the centre cordinates.
-
 
 ## Centre coordinates and Bounding box dimensions
 The reason why the center coordinate prediction in YOLO is passed through a sigmoid function is to constrain the output to a range between 0 and 1. This is necessary because YOLO predicts the offsets relative to the top left corner of the grid cell that is detecting the object. The actual center coordinate of the object can then be calculated by adding these offsets to the coordinates of the top left corner of the cell.
