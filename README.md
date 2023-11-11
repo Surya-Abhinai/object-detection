@@ -6,7 +6,7 @@
 * Sushree Shivani Sethi
 # Mentees
 * Aakarsh Bansal
-* Raajan Rajesh Wankhade
+* Raajan
 * Tejas S
 * Shriya Sheri
 # Aim 
